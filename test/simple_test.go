@@ -69,9 +69,10 @@ func TestTerraformSimpleExample(t *testing.T) {
 	//start new aws session
 	s := session.Must(session.NewSession())
 	c := guardduty.New(s, aws.NewConfig().WithRegion((region)))
-
-	_, error := c.GetDetector(&guardduty.GetDetectorInput{DetectorId: &detectorID})
-
+	fmt.Println("hellow world")
+	//verify that the detector was created
+	detectorresponse, error := c.GetDetector(&guardduty.GetDetectorInput{DetectorId: &detectorID})
+	fmt.Println(detectorresponse.String())
 	require.NoError(t, error)
 
 }
