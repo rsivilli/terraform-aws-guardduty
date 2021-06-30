@@ -1,7 +1,7 @@
 variable "tags" {
-    type = map(string)
+  type = map(string)
 }
 
-variable "test_name"{
-    type = string
+variable "test_name" {
+  type = string
 }
